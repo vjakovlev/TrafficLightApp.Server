@@ -20,7 +20,7 @@ namespace TrafficLightApp.Repositories
                     {
                         LightColor = LightColor.Red,
                         IsOn = true,
-                        Duration = 120
+                        Duration = 6
                     },
                     new LightDomainModel
                     {

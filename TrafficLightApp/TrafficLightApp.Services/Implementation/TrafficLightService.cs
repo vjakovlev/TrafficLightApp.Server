@@ -17,7 +17,7 @@ namespace TrafficLightApp.Services.Implementation
 
         public TrafficLightService(ITrafficLightRepository trafficLightRepository)
         {
-            trafficLightStateManager = TrafficLightStateManager.Instance;
+            trafficLightStateManager = TrafficLightStateManager.CreateInstance(trafficLightRepository);
             _trafficLightRepository = trafficLightRepository;
         }
 

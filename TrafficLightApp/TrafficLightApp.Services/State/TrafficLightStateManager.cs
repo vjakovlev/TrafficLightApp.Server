@@ -6,24 +6,21 @@ namespace TrafficLightApp.Services.State
 {
     public class TrafficLightStateManager
     {
-        protected readonly ITrafficLightRepository _trafficLighRepository;
+        protected static ITrafficLightRepository _trafficLighRepository;
 
         private static readonly Lazy<TrafficLightStateManager> _trafficLightStateManager = 
                 new Lazy<TrafficLightStateManager>(() => new TrafficLightStateManager());
 
         public TrafficLightState CurrentState { get; set; }
 
-        public static TrafficLightStateManager Instance 
+        public static TrafficLightStateManager CreateInstance(ITrafficLightRepository trafficLighRepository) 
         {
-            get 
-            {
-                return _trafficLightStateManager.Value;
-            }
+            _trafficLighRepository = trafficLighRepository;
+            return _trafficLightStateManager.Value;
         }
 
         private TrafficLightStateManager()
         {
-            _trafficLighRepository = new TrafficLightRepository();
             CurrentState = new RedState();
         }
 
