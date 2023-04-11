@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TrafficLightApp.DomainModels\TrafficLightApp.DomainModels.csproj" />
+    <ProjectReference Include="..\TrafficLightApp.Repositories\TrafficLightApp.Repositories.csproj" />
+    <ProjectReference Include="..\TrafficLightApp.ViewModels\TrafficLightApp.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>
