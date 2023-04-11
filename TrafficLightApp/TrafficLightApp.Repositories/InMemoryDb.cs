@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TrafficLightApp.DomainModels.Classes;
+﻿using TrafficLightApp.DomainModels.Classes;
 using TrafficLightApp.DomainModels.Enums;
 
 namespace TrafficLightApp.Repositories
@@ -20,7 +15,7 @@ namespace TrafficLightApp.Repositories
                     {
                         LightColor = LightColor.Red,
                         IsOn = true,
-                        Duration = 6
+                        Duration = 120
                     },
                     new LightDomainModel
                     {
@@ -42,7 +37,5 @@ namespace TrafficLightApp.Repositories
                     }
                 }
         };
-
-
     }
 }

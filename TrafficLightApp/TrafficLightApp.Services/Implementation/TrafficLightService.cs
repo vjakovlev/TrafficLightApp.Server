@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TrafficLightApp.DomainModels.Enums;
 using TrafficLightApp.Repositories.Abstraction;
 using TrafficLightApp.Services.Abstraction;
 using TrafficLightApp.Services.State;
@@ -34,9 +30,17 @@ namespace TrafficLightApp.Services.Implementation
 
             var lightViewModel = new LightViewModel
             {
-                Duration = activeLight.Duration,
                 LightColor = activeLight.LightColor.ToString(),
             };
+
+            if (activeLight.LightColor == LightColor.Red || activeLight.Duration > 5)
+            {
+                lightViewModel.Duration = activeLight.Duration - 5;
+            }
+            else 
+            {
+                lightViewModel.Duration = activeLight.Duration;
+            }
 
             var TrafficLightViewModel = new TrafficLightViewModel()
             {
